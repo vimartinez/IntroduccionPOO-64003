@@ -1,5 +1,7 @@
+import constructor.Persona;
 import encapsulamiento.CuentaBancaria;
 import encapsulamiento.CuentaBancaria2;
+import getterSetter.Perro;
 import herencia.ClaseAbulelo;
 import herencia.ClaseHijo;
 import herencia.ClaseNieto;
@@ -41,8 +43,32 @@ public class App {
 		ClaseNieto claseC = new ClaseNieto();
 		
 		claseC.metodo1(); //método implementado en claseC
-		claseC.metodo2(); //método implementado en claseC que llama al método de la clase padre
+		claseC.metodo2(); //método implementado en claseC que llama al método de la clase 
 
+		
+		System.out.println("Constructores");
+		
+		Persona persona = new Persona();
+		Persona persona2 = new Persona("Juan Carlos", "Perez");
+		Persona persona3 = new Persona("Maria", "Gomez","39478541");
+		Persona persona4 = new Persona("Paula", "Gutierrez", "39874145", "Laprida 1235", "Femenio");
+		
+		System.out.println("persona: " + persona.toString());
+		System.out.println("persona2: " + persona2.toString());
+		System.out.println("persona3: " + persona3.toString());
+		System.out.println("persona4: " + persona4.toString());
+		
+
+		System.out.println("Getters y Setters");
+		
+		Perro perro = new Perro("Mestizo", "Pirulo", 5, "Corto", true, 25.0F);
+		
+		System.out.println("La raza del perro es " + perro.getRaza());
+		perro.setRaza("Labrador");
+		System.out.println("La nueva raza del perro es " + perro.getRaza());
+		perro.setEdad(6);
+		perro.setEsAmistoso(false);
+		System.out.println("La nueva edad del perro es " + perro.getEdad());
 	}
 
 }
