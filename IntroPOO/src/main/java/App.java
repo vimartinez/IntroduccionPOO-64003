@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import constructor.Persona;
 import encapsulamiento.CuentaBancaria;
 import encapsulamiento.CuentaBancaria2;
@@ -5,6 +8,10 @@ import getterSetter.Perro;
 import herencia.ClaseAbulelo;
 import herencia.ClaseHijo;
 import herencia.ClaseNieto;
+import polimorfismo.Auto;
+import polimorfismo.Barco;
+import polimorfismo.Helicoptero;
+import polimorfismo.Vehiculo;
 
 public class App {
 
@@ -69,6 +76,33 @@ public class App {
 		perro.setEdad(6);
 		perro.setEsAmistoso(false);
 		System.out.println("La nueva edad del perro es " + perro.getEdad());
+		
+		System.out.println("Polimorfismo");
+		
+		Vehiculo auto1 = new Auto("VW", "Gol", 30);
+		Vehiculo auto2 = new Auto("Ferrari", "F40", 55);
+		Vehiculo auto3 = new Auto("Renault", "Logan", 25);
+		
+		List <Vehiculo> flota = new ArrayList<Vehiculo>();
+		
+		flota.add(auto1);
+		flota.add(auto2);
+		flota.add(auto3);
+		
+		for (Vehiculo auto : flota) {
+			auto.desplazarse(20);
+		}
+		
+		Vehiculo barco1 = new Barco("Marca Barco", "Bote", 300);
+		Vehiculo heli1 = new Helicoptero("Heli1", "Heli 2", 500);
+		
+		flota.add(barco1);
+		flota.add(heli1);
+		
+		for (Vehiculo auto : flota) {
+			auto.desplazarse(50);
+		}
+		
 	}
 
 }
